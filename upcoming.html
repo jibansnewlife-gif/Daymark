@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="See what is coming up and make a little room for the days ahead.">
+  <title>Upcoming — Daymark</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="upcoming">
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Daymark home">
+        <span class="brand-mark" aria-hidden="true">d.</span>
+        <span class="brand-name">daymark</span>
+      </a>
+      <div class="top-right"><span class="date-label" id="header-date"></span></div>
+    </header>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Today</a>
+      <a class="nav-link" href="upcoming.html" aria-current="page">Upcoming</a>
+      <a class="nav-link" href="focus.html">Focus</a>
+      <a class="nav-link" href="settings.html">Settings</a>
+    </nav>
+    <main>
+      <section class="page-heading">
+        <div class="eyebrow">A little look ahead</div>
+        <h1>Make space for what’s next.</h1>
+        <p>Your future tasks, gathered by day. Take them one at a time.</p>
+      </section>
+      <p class="app-notice" id="app-notice" role="status" hidden></p>
+      <div class="page-toolbar">
+        <h2>Coming up</h2>
+        <span class="task-count" id="upcoming-count">0 planned</span>
+        <button class="new-task" id="open-dialog"><span class="plus" aria-hidden="true">+</span> Add a task</button>
+      </div>
+      <section class="card" aria-label="Upcoming tasks">
+        <div id="upcoming-list"></div>
+      </section>
+      <div class="footer-note">A plan is a kindness to your future self.</div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <span>© Daymark · Made for everyday clarity</span>
+    <nav class="footer-links" aria-label="Legal information">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+  <dialog id="task-dialog" aria-labelledby="dialog-title">
+    <form class="dialog-inner" id="task-form">
+      <div class="dialog-head">
+        <h2 id="dialog-title">Make a little plan</h2>
+        <button class="close-dialog" type="button" id="close-dialog" aria-label="Close">×</button>
+      </div>
+      <div class="field">
+        <label for="task-input">What’s on your mind?</label>
+        <input id="task-input" name="title" maxlength="100" placeholder="e.g. Send the first draft" required autocomplete="off">
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="task-date">Date</label>
+          <input id="task-date" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="task-time">When</label>
+          <input id="task-time" name="time" type="time" value="10:00">
+        </div>
+        <div class="field">
+          <label for="task-category">A little category</label>
+          <select id="task-category" name="category">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Wellbeing">Wellbeing</option>
+          </select>
+        </div>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button class="new-task submit-task" type="submit">Add to your plan</button>
+    </form>
+  </dialog>
+</body>
+</html>

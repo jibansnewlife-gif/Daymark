@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="Personalize Daymark and manage the data saved in your browser.">
+  <title>Settings — Daymark</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="settings">
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Daymark home">
+        <span class="brand-mark" aria-hidden="true">d.</span>
+        <span class="brand-name">daymark</span>
+      </a>
+      <div class="top-right"><span class="date-label" id="header-date"></span></div>
+    </header>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Today</a>
+      <a class="nav-link" href="upcoming.html">Upcoming</a>
+      <a class="nav-link" href="focus.html">Focus</a>
+      <a class="nav-link" href="settings.html" aria-current="page">Settings</a>
+    </nav>
+    <main>
+      <section class="page-heading">
+        <div class="eyebrow">Make it feel like yours</div>
+        <h1>A few little preferences.</h1>
+        <p>Your planner belongs to you. Keep it simple, or make it personal.</p>
+      </section>
+      <p class="app-notice" id="app-notice" role="status" hidden></p>
+      <div class="settings-grid">
+        <section class="card settings-card">
+          <h2>Your profile</h2>
+          <p class="settings-copy">Add your name to make your daily welcome a little warmer.</p>
+          <form class="settings-form" id="profile-form">
+            <div class="field">
+              <label for="profile-name">What should we call you?</label>
+              <input id="profile-name" name="name" maxlength="40" autocomplete="given-name" placeholder="Your name">
+            </div>
+            <button class="new-task" type="submit">Save preferences</button>
+            <p class="settings-message" id="settings-message" role="status"></p>
+          </form>
+        </section>
+        <aside>
+          <section class="card settings-card">
+            <h2>Your data, your call</h2>
+            <p class="settings-copy">Tasks and preferences are stored only in this browser. Export a backup to move them, or clear them whenever you like.</p>
+            <div class="settings-actions">
+              <button class="settings-button" id="export-data" type="button">Download backup</button>
+              <button class="settings-button" id="restore-data" type="button">Restore backup</button>
+              <input id="import-file" type="file" accept="application/json,.json" hidden>
+              <button class="settings-button danger" id="clear-data" type="button">Clear local data</button>
+            </div>
+          </section>
+          <section class="card settings-card">
+            <h2>A note on privacy</h2>
+            <p class="privacy-note">Daymark has no account system, analytics, or advertising. Your planner data stays in your browser’s local storage and is not synced to another device. Clearing browser data will remove it, so keep a backup if you need one.</p>
+          </section>
+        </aside>
+      </div>
+      <div class="footer-note">A little more room for what matters.</div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <span>© Daymark · Made for everyday clarity</span>
+    <nav class="footer-links" aria-label="Legal information">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>

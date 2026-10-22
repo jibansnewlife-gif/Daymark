@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="Settle into a focused work session with Daymark's simple focus timer.">
+  <title>Focus room — Daymark</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="focus">
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Daymark home">
+        <span class="brand-mark" aria-hidden="true">d.</span>
+        <span class="brand-name">daymark</span>
+      </a>
+      <div class="top-right"><span class="date-label" id="header-date"></span></div>
+    </header>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Today</a>
+      <a class="nav-link" href="upcoming.html">Upcoming</a>
+      <a class="nav-link" href="focus.html" aria-current="page">Focus</a>
+      <a class="nav-link" href="settings.html">Settings</a>
+    </nav>
+    <main>
+      <section class="page-heading">
+        <div class="eyebrow">A quieter kind of momentum</div>
+        <h1>Welcome to your focus room.</h1>
+        <p>Pick one small thing. Let the rest wait.</p>
+      </section>
+      <p class="app-notice" id="app-notice" role="status" hidden></p>
+      <div class="focus-page-grid">
+        <section class="card focus-room" aria-label="Focus timer">
+          <span class="focus-icon" aria-hidden="true">◷</span>
+          <h2>A moment for one thing</h2>
+          <p class="focus-intro">Twenty-five minutes, at your own pace.</p>
+          <div class="timer" id="timer" aria-live="off">25:00</div>
+          <p class="timer-sub" id="timer-sub">A little space for one thing.</p>
+          <div class="timer-controls">
+            <button class="timer-button" id="timer-toggle" type="button">Start focus</button>
+            <button class="timer-button secondary" id="timer-reset" type="button">Reset</button>
+          </div>
+        </section>
+        <section class="card focus-task-card" aria-labelledby="focus-task-heading">
+          <h2 id="focus-task-heading">A few things for today</h2>
+          <p class="settings-copy">Choose one. You can come back to the rest.</p>
+          <div class="task-list" id="focus-task-list"></div>
+        </section>
+      </div>
+      <div class="footer-note">You can pause whenever you need to.</div>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <span>© Daymark · Made for everyday clarity</span>
+    <nav class="footer-links" aria-label="Legal information">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>
