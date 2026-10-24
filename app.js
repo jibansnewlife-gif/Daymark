@@ -134,11 +134,13 @@
     checkbox.type = "checkbox";
     checkbox.className = "check";
     checkbox.checked = task.done;
+    checkbox.dataset.taskId = task.id;
     checkbox.setAttribute("aria-label", `${task.done ? "Mark incomplete" : "Complete"}: ${task.title}`);
     checkbox.addEventListener("change", () => {
       task.done = checkbox.checked;
       saveTasks();
       renderPage();
+      focusTaskControl(task.id);
     });
 
     const details = document.createElement("div");
@@ -177,6 +179,7 @@
   function renderEmpty(list, message) {
     const empty = document.createElement("div");
     empty.className = "empty";
+    empty.tabIndex = -1;
     const icon = document.createElement("div");
     icon.className = "empty-icon";
     icon.setAttribute("aria-hidden", "true");
@@ -185,6 +188,12 @@
     text.textContent = message;
     empty.append(icon, text);
     list.replaceChildren(empty);
+  }
+
+  function focusTaskControl(taskId) {
+    const checkboxes = Array.from(document.querySelectorAll(".check"));
+    const target = checkboxes.find((checkbox) => checkbox.dataset.taskId === taskId) || checkboxes[0];
+    (target || $(".empty"))?.focus();
   }
 
   function renderProgress() {

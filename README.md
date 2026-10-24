@@ -20,4 +20,5 @@ Open `index.html` in a browser to use Daymark. No build step or package installa
 - `upcoming.html` — Upcoming tasks
 - `focus.html` — Focus timer
 - `settings.html` — Preferences and data management
+- `changelog.html` — Daymark release notes
 - `privacy.html` and `terms.html` — Legal information

@@ -96,6 +96,11 @@
     .settings-card + .settings-card { margin-top: 16px; }
     .settings-card h2 { margin-bottom: 7px; }
     .settings-copy { margin: 0 0 20px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .settings-card .release-heading { margin-top: 8px; }
+    .release-link { margin: 0; }
+    .release-meta { display: flex; align-items: center; gap: 12px; color: var(--muted); font: 11px "DM Mono", monospace; }
+    .release-version { padding: 6px 8px; border-radius: 8px; background: var(--green-soft); color: var(--green); }
+    .legal-copy .release-title { margin: 16px 0 8px; font: 600 22px "Playfair Display", Georgia, serif; }
     .settings-form { max-width: 420px; }
     .settings-message { min-height: 18px; color: var(--green); font-size: 12px; }
     .settings-actions { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -143,6 +148,9 @@
     }
     .task:hover .task-delete, .task-delete:focus-visible { opacity: 1; }
     .task-delete:hover { background: #f3f2ef; color: #8a4e40; }
+    @media (hover: none) {
+      .task-delete { opacity: 1; }
+    }
     .empty { padding: 52px 20px; text-align: center; color: var(--muted); font-size: 13px; }
     .empty-icon { font-size: 24px; margin-bottom: 10px; }
     .progress-card { padding: 21px 22px 20px; margin-bottom: 16px; }
